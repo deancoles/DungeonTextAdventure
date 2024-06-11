@@ -70,7 +70,13 @@ a) Lie on the floor and wait to be saved
 b) Beg and plead for mercy
 ");  
 
-string input = Console.ReadLine();
+string input = Console.ReadLine().ToLower();    // Converts input to lowercase
+
+while (input != "a" && input != "b")        // Loops until a valid input is entered
+{
+    Console.WriteLine("Invalid input. Please enter 'a' or 'b'.");
+    input = Console.ReadLine().ToLower();
+}
 
 Console.Clear();
 if (input == "a")
@@ -107,8 +113,10 @@ else if (input == "b")
 a) Accept
 b) Refuse
 ");
-    input = Console.ReadLine();
+    input = Console.ReadLine().ToLower();
+
     Console.Clear();
+
     if (input == "a")
     {
         Console.WriteLine("Seeing no choice you give in to the temptress and become her thrall for eternity.");
